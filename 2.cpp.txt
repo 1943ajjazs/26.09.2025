@@ -1,0 +1,27 @@
+#include <iostream>
+#include <queue>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+    // Приоритетная очередь (максимальная куча по умолчанию)
+    priority_queue<int> pq; // создаём приоритетную очередь
+    pq.push(10);
+    pq.push(3);
+    pq.push(15);
+    cout << pq.top() << endl; // 15 (наибольший элемент)
+    pq.pop(); // удаляем 15
+    cout << pq.top() << endl; // теперь 10
+
+    // Хеш-таблица (unordered_map)
+    unordered_map<string, int> map;
+    map["apple"] = 100; 
+    map["banana"] = 150;
+    cout << map["apple"] << endl; // 100 (доступ по ключу)
+    if (map.find("banana") != map.end()) {
+        cout << "Found banana" << endl; // проверяем наличие ключа
+    }
+    map.erase("apple"); // удаляем по ключу "apple"
+    cout << (map.count("apple") > 0) << endl; // 0 (false) – ключа "apple" больше нет
+    return 0;
+}
